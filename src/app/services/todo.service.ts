@@ -56,7 +56,7 @@ export class TodoService {
 
 
   syncTodosFromLocalStorage(){
-    const todos = this.myStorage.getItem('todos')
+    const todos = this.myStorage.getItem('my-todos')
 
     if(todos){
       this.todos.next(JSON.parse(todos))
@@ -64,6 +64,6 @@ export class TodoService {
   }
 
   saveTodosToLocalStorage(todos:any[]){
-    this.myStorage.setItem('todos', JSON.stringify(todos))
+    this.myStorage.setItem('my-todos', JSON.stringify(todos))
   }
 }
