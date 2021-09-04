@@ -22,8 +22,10 @@ export class HeaderComponent implements OnInit {
   }
 
   onAddTodo(){
-    this.todoService.addTodo(this.myInput.nativeElement.value)
-    this.myInput.nativeElement.value=''
+    if(this.myInput.nativeElement.value){
+      this.todoService.addTodo(this.myInput.nativeElement.value)
+      this.myInput.nativeElement.value=''
+    }
   }
 
   closeMenu(){

@@ -7,7 +7,7 @@
       <input #myInput (click)="$event.stopPropagation()" defaultValue='' class='todo-text' type='text'
         placeholder='Todo text' (keypress)="onKeyPress($event)" />
     </li>
-    <li (click)="onAddTodo()">+ Add Todo</li>
+    <li (click)="onAddTodo(); $event.stopPropagation()">+ Add Todo</li>
   </ul>
   <img class='mobile-nav-icon' src="assets/images/list.png" alt='menu' (click)="openMenu()" />
 </div>
