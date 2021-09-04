@@ -49,7 +49,7 @@ export class TodoService {
 
 
   deleteTodo = (id:number)=>{
-    const newTodos  = [this.todos.value].filter( (todo:any) => { return todo.id !== id})
+    const newTodos  = [...this.todos.value].filter( (todo:any) => { return todo.id !== id})
     this.todos.next(newTodos)
     this.saveTodosToLocalStorage(newTodos)
   }
@@ -59,7 +59,7 @@ export class TodoService {
     const todos = this.myStorage.getItem('todos')
 
     if(todos){
-      console.log(todos)
+      this.todos.next(JSON.parse(todos))
     }
   }
 

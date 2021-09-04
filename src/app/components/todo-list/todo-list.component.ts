@@ -11,9 +11,18 @@ export class TodoListComponent implements OnInit {
   constructor(private todoService: TodoService) { }
 
   ngOnInit(): void {
+    this.todoService.syncTodosFromLocalStorage()
     this.todoService.getTodos().subscribe(todos=>{
       this.todos = todos
     })
+  }
+
+  change(id:number, e:any){
+    this.todoService.updateTodoState(id,e.target.checked)
+  }
+
+  onDelete(id:number){
+    this.todoService.deleteTodo(id)
   }
 
 }
