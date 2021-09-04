@@ -1,0 +1,13 @@
+<div class="Header">
+  <div class='Header-Logo'>
+    <h1>MyToDo</h1>
+  </div>
+  <ul [ngClass]="!mobMenuState ? 'Header-Buttons' : 'open'" (click)="closeMenu()">
+    <li (click)="$event.stopPropagation()">
+      <input #myInput (click)="$event.stopPropagation()" defaultValue='' class='todo-text' type='text'
+        placeholder='Todo text' (keypress)="onKeyPress($event)" />
+    </li>
+    <li (click)="onAddTodo()">+ Add Todo</li>
+  </ul>
+  <img class='mobile-nav-icon' src="../../../assets/images/list.png" alt='menu' (click)="openMenu()" />
+</div>

@@ -1,0 +1,129 @@
+.Header{
+  width: 100%;
+  background: var(--c-dark);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  position: fixed;
+  z-index: 10;
+  box-sizing: border-box;
+
+}
+
+.Header-Logo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.Header-Logo h1{
+  color: var(--c-primary)
+}
+
+
+
+.Header-Buttons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+
+
+/* 00000000000000000000 */
+
+.Header-Buttons li{
+
+  list-style: none;
+  color:var(--c-primary);
+
+
+}
+.Header-Buttons li:last-child{
+  padding-inline: 20px;
+  padding-block: 10px;
+  border: 1px solid var(--c-primary);
+  border-radius: 30px !important;
+
+}
+.Header-Buttons li:hover{
+  color: var(--c-secondary);
+  cursor: pointer;
+  border-color: var(--c-secondary);
+
+}
+
+
+.todo-text{
+  width: 300px !important;
+  padding: 20px;
+  padding-block: 13px;
+  border-radius: 20px;
+  background: var(--c-light);
+}
+
+.mobile-nav-icon{
+  width: 30px;
+  display: none;
+}
+
+@media only  screen and (max-width: 750px){
+
+  .open{
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      left:0;
+      top:0;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly !important;
+      padding: 50px;
+      background: rgba(0,0,0,0.77);
+  }
+
+  .open li{
+      list-style: none;
+      color:var(--c-light);
+
+  }
+
+  .open li:last-child{
+      padding-inline: 20px;
+      padding-block: 10px;
+      border: 1px solid var(--c-light);
+      border-radius: 30px !important;
+      background: var(--c-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+  }
+  .open li:last-child:hover{
+      color: var(--c-light);
+      cursor: pointer;
+      background: var(--c-secondary);
+
+  }
+
+
+  .mobile-nav-icon{
+      display: block;
+  }
+  .mobile-nav-icon:hover{
+      cursor: pointer;
+  }
+
+  .Header-Buttons{
+      display: none;
+  }
+
+  .todo-text{
+      width: 100% !important;
+      margin-block-end: 20px;
+  }
+}
